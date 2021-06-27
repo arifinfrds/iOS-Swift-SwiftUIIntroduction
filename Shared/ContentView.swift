@@ -9,34 +9,62 @@ import SwiftUI
 
 struct ContentView: View {
 	
-    var body: some View {
+	var body: some View {
 		
-		VStack(alignment: .leading) {
+		ScrollView(.horizontal, showsIndicators: false) {
 			
-			// Item
-			Text("Featured".uppercased())
-				.font(.caption)
-				.bold()
-				.foregroundColor(.blue)
+			HStack {
+				
+				VStack(alignment: .leading) {
+					
+					// Item 1
+					Text("Featured".uppercased())
+						.font(.caption)
+						.bold()
+						.foregroundColor(.blue)
+					
+					Text("Good Notes5")
+						.font(.title3)
+						.foregroundColor(.primary)
+					
+					Text("Bring order to your notes")
+						.font(.title3)
+						.foregroundColor(.secondary)
+					
+					Image(systemName: "person")
+						.resizable()
+						.frame(width: 380, height: 250, alignment: .center)
+				}
+				
+				VStack(alignment: .leading) {
+					
+					// Item 2
+					Text("Featured".uppercased())
+						.font(.caption)
+						.bold()
+						.foregroundColor(.blue)
+					
+					Text("Good Notes5")
+						.font(.title3)
+						.foregroundColor(.primary)
+					
+					Text("Bring order to your notes")
+						.font(.title3)
+						.foregroundColor(.secondary)
+					
+					Image(systemName: "person")
+						.resizable()
+						.frame(width: 380, height: 250, alignment: .center)
+				}
+				.padding()
+			}
 			
-			Text("Good Notes5")
-				.font(.title3)
-				.foregroundColor(.primary)
-			
-			Text("Bring order to your notes")
-				.font(.title3)
-				.foregroundColor(.secondary)
-			
-			Image(systemName: "person")
-				.resizable()
-				.frame(width: 380, height: 250, alignment: .center)
 		}
-		.padding()
-    }
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+	static var previews: some View {
+		ContentView()
+	}
 }

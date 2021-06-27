@@ -39,7 +39,7 @@ struct ContentView: View {
 						
 						Image(systemName: "person")
 							.resizable()
-							.frame(width: 380, height: 250, alignment: .center)
+							.frame(width: 340, height: 250, alignment: .center)
 					}
 					
 					VStack(alignment: .leading) {
@@ -60,11 +60,12 @@ struct ContentView: View {
 						
 						Image(systemName: "person")
 							.resizable()
-							.frame(width: 380, height: 250, alignment: .center)
+							.frame(width: 340, height: 250, alignment: .center)
 					}
 					.padding()
 				}
 			}
+			.padding()
 			
 			Divider()
 			
@@ -80,6 +81,39 @@ struct ContentView: View {
 				
 			}
 			.padding()
+			
+			VStack {
+				HStack {
+					Image(systemName: "video")
+						.resizable()
+						.frame(width: 45, height: 40, alignment: .center)
+					
+					VStack(alignment: .leading) {
+						Text("ZOOM Cloud Meetings")
+						Text("Meet Happy")
+							.font(.caption)
+							.foregroundColor(.secondary)
+					}
+					
+					Spacer()
+					
+					Button("OPEN", action: { })
+						.foregroundColor(.blue)
+						.font(Font.system(size: 17, weight: .bold, design: .default))
+					
+				}
+				.padding([.leading, .trailing], 20)
+				
+				HStack {
+					Image(systemName: "iphone")
+						.resizable()
+					.frame(width: 175, height: 300, alignment: .center)
+					
+					Image(systemName: "iphone.homebutton")
+						.resizable()
+						.frame(width: 175, height: 300, alignment: .center)
+				}
+			}
 		}
 	}
 }

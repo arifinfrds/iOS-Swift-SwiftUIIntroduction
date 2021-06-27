@@ -12,108 +12,113 @@ struct ContentView: View {
 	var body: some View {
 		
 		// Scroll for All Contents
-		ScrollView(.vertical) {
-			
-			Divider()
-			
-			// Scroll for Banner
-			ScrollView(.horizontal, showsIndicators: false) {
+		NavigationView {
+			ScrollView(.vertical) {
 				
-				HStack {
+				Divider()
+				
+				// Scroll for Banner
+				ScrollView(.horizontal, showsIndicators: false) {
 					
-					VStack(alignment: .leading) {
+					HStack {
 						
-						// Item 1
-						Text("Featured".uppercased())
-							.font(.caption)
-							.bold()
-							.foregroundColor(.blue)
+						VStack(alignment: .leading) {
+							
+							// Item 1
+							Text("Featured".uppercased())
+								.font(.caption)
+								.bold()
+								.foregroundColor(.blue)
+							
+							Text("Good Notes5")
+								.font(.title3)
+								.foregroundColor(.primary)
+							
+							Text("Bring order to your notes")
+								.font(.title3)
+								.foregroundColor(.secondary)
+							
+							Image(systemName: "note.text")
+								.resizable()
+								.frame(width: 340, height: 250, alignment: .center)
+						}
 						
-						Text("Good Notes5")
-							.font(.title3)
-							.foregroundColor(.primary)
-						
-						Text("Bring order to your notes")
-							.font(.title3)
-							.foregroundColor(.secondary)
-						
-						Image(systemName: "note.text")
-							.resizable()
-							.frame(width: 340, height: 250, alignment: .center)
+						VStack(alignment: .leading) {
+							
+							// Item 2
+							Text("Featured".uppercased())
+								.font(.caption)
+								.bold()
+								.foregroundColor(.blue)
+							
+							Text("Instagram")
+								.font(.title3)
+								.foregroundColor(.primary)
+							
+							Text("Photo & Video")
+								.font(.title3)
+								.foregroundColor(.secondary)
+							
+							Image(systemName: "camera")
+								.resizable()
+								.frame(width: 340, height: 250, alignment: .center)
+						}
+						.padding()
 					}
-					
-					VStack(alignment: .leading) {
-						
-						// Item 2
-						Text("Featured".uppercased())
-							.font(.caption)
-							.bold()
-							.foregroundColor(.blue)
-						
-						Text("Instagram")
-							.font(.title3)
-							.foregroundColor(.primary)
-						
-						Text("Bring order to your notes")
-							.font(.title3)
-							.foregroundColor(.secondary)
-						
-						Image(systemName: "camera")
-							.resizable()
-							.frame(width: 340, height: 250, alignment: .center)
-					}
-					.padding()
 				}
-			}
-			.padding()
-			
-			Divider()
-			
-			HStack {
-				Text("Apps Spotlight")
-					.font(.title2)
-					.bold()
+				.padding()
 				
-				Spacer()
+				Divider()
 				
-				Button("See All", action: { })
-					.foregroundColor(.blue)
-				
-			}
-			.padding()
-			
-			VStack {
+				// Apps Spotlight Section Header
 				HStack {
-					Image(systemName: "video")
-						.resizable()
-						.frame(width: 45, height: 40, alignment: .center)
-					
-					VStack(alignment: .leading) {
-						Text("ZOOM Cloud Meetings")
-						Text("Meet Happy")
-							.font(.caption)
-							.foregroundColor(.secondary)
-					}
+					Text("Apps Spotlight")
+						.font(.title2)
+						.bold()
 					
 					Spacer()
 					
-					Button("OPEN", action: { })
+					Button("See All", action: { })
 						.foregroundColor(.blue)
-						.font(Font.system(size: 17, weight: .bold, design: .default))
 					
 				}
-				.padding([.leading, .trailing], 20)
+				.padding()
 				
-				HStack {
-					Image(systemName: "iphone")
-						.resizable()
-						.frame(width: 175, height: 300, alignment: .center)
+				// Apps Spotlight Cell Content
+				VStack {
+					HStack {
+						Image(systemName: "video")
+							.resizable()
+							.frame(width: 45, height: 40, alignment: .center)
+						
+						VStack(alignment: .leading) {
+							Text("ZOOM Cloud Meetings")
+							Text("Meet Happy")
+								.font(.caption)
+								.foregroundColor(.secondary)
+						}
+						
+						Spacer()
+						
+						Button("OPEN", action: { })
+							.foregroundColor(.blue)
+							.font(Font.system(size: 17, weight: .bold, design: .default))
+						
+					}
+					.padding([.leading, .trailing], 20)
 					
-					Image(systemName: "iphone.homebutton")
-						.resizable()
-						.frame(width: 175, height: 300, alignment: .center)
+					HStack {
+						Image(systemName: "iphone")
+							.resizable()
+							.frame(width: 175, height: 300, alignment: .center)
+						
+						Image(systemName: "iphone.homebutton")
+							.resizable()
+							.frame(width: 175, height: 300, alignment: .center)
+					}
 				}
 			}
+			.navigationBarTitle("Apps")
 		}
 	}
 }

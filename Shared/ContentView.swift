@@ -37,7 +37,7 @@ struct ContentView: View {
 							.font(.title3)
 							.foregroundColor(.secondary)
 						
-						Image(systemName: "person")
+						Image(systemName: "note.text")
 							.resizable()
 							.frame(width: 340, height: 250, alignment: .center)
 					}
@@ -50,7 +50,7 @@ struct ContentView: View {
 							.bold()
 							.foregroundColor(.blue)
 						
-						Text("Good Notes5")
+						Text("Instagram")
 							.font(.title3)
 							.foregroundColor(.primary)
 						
@@ -58,7 +58,7 @@ struct ContentView: View {
 							.font(.title3)
 							.foregroundColor(.secondary)
 						
-						Image(systemName: "person")
+						Image(systemName: "camera")
 							.resizable()
 							.frame(width: 340, height: 250, alignment: .center)
 					}
@@ -107,7 +107,7 @@ struct ContentView: View {
 				HStack {
 					Image(systemName: "iphone")
 						.resizable()
-					.frame(width: 175, height: 300, alignment: .center)
+						.frame(width: 175, height: 300, alignment: .center)
 					
 					Image(systemName: "iphone.homebutton")
 						.resizable()

@@ -22,48 +22,19 @@ struct ContentView: View {
 					
 					HStack {
 						
-						VStack(alignment: .leading) {
-							
-							// Item 1
-							Text("Featured".uppercased())
-								.font(.caption)
-								.bold()
-								.foregroundColor(.blue)
-							
-							Text("Good Notes5")
-								.font(.title3)
-								.foregroundColor(.primary)
-							
-							Text("Bring order to your notes")
-								.font(.title3)
-								.foregroundColor(.secondary)
-							
-							Image(systemName: "note.text")
-								.resizable()
-								.frame(width: 340, height: 250, alignment: .center)
-						}
+						BannerCell(
+							smallTitle: "Featured".lowercased(),
+							largeTitle: "Good Notes5",
+							secondaryTitle: "Bring order to your notes",
+							systemImageName: "note.text"
+						)
 						
-						VStack(alignment: .leading) {
-							
-							// Item 2
-							Text("Featured".uppercased())
-								.font(.caption)
-								.bold()
-								.foregroundColor(.blue)
-							
-							Text("Instagram")
-								.font(.title3)
-								.foregroundColor(.primary)
-							
-							Text("Photo & Video")
-								.font(.title3)
-								.foregroundColor(.secondary)
-							
-							Image(systemName: "camera")
-								.resizable()
-								.frame(width: 340, height: 250, alignment: .center)
-						}
-						.padding()
+						BannerCell(
+							smallTitle: "Featured".lowercased(),
+							largeTitle: "Instagram",
+							secondaryTitle: "Photo & Video",
+							systemImageName: "camera"
+						)
 					}
 				}
 				.padding()
@@ -118,7 +89,6 @@ struct ContentView: View {
 					}
 				}
 			}
-			.navigationBarTitle("Apps")
 		}
 	}
 }
@@ -126,5 +96,37 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
 	static var previews: some View {
 		ContentView()
+		
+	}
+}
+
+
+struct BannerCell: View {
+	let smallTitle: String
+	let largeTitle: String
+	let secondaryTitle: String
+	let systemImageName: String
+	
+	var body: some View {
+		VStack(alignment: .leading) {
+			
+			// Item 1
+			Text(smallTitle)
+				.font(.caption)
+				.bold()
+				.foregroundColor(.blue)
+			
+			Text(largeTitle)
+				.font(.title3)
+				.foregroundColor(.primary)
+			
+			Text(secondaryTitle)
+				.font(.title3)
+				.foregroundColor(.secondary)
+			
+			Image(systemName: systemImageName)
+				.resizable()
+				.frame(width: 340, height: 250, alignment: .center)
+		}
 	}
 }
